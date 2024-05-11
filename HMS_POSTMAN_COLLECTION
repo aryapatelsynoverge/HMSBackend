@@ -1,0 +1,1111 @@
+{
+	"info": {
+		"_postman_id": "d375f6a5-59c0-44c3-b8e5-9cdff89d7725",
+		"name": "Hospital Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32959532"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\": \"Admin@11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/loginUser/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"loginUser",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "Get All Doctor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/doctors/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Doctor By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/doctors/doctor/DOC-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors",
+								"doctor",
+								"DOC-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Doctor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"doctor_id\":\"\" ,\r\n    \"doctor_custom_id\": \"\",\r\n    \"doctor_name\": \"New test Doctor 1\",\r\n    \"phone_number\": 1234567890,\r\n    \"is_active\": true,\r\n    \"address\": \"test address\",\r\n    \"city\": \"Bhagalpur\",\r\n    \"state\": \"Bihar\",\r\n    \"zipcode\": 123456,\r\n    \"user_name\": \"test new doctor\",\r\n    \"email\": \"TestNewDoctor@mailinator.com\",\r\n    \"selected_hospital\": [\r\n        \"HO-1\",\r\n        \"HO-2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/doctors/doctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors",
+								"doctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Doctor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"doctor_id\": 29,\r\n    \"doctor_custom_id\": \"DOC-29\",\r\n    \"doctor_name\": \"New test Doctor\",\r\n    \"phone_number\": 1234567890,\r\n    \"is_active\": true,\r\n    \"address\": \"test address\",\r\n    \"city\": \"Bhagalpur\",\r\n    \"state\": \"Bihar\",\r\n    \"zipcode\": 123456,\r\n    \"user_name\": \"test new doctor\",\r\n    \"email\": \"TestNewDoctor@mailinator.com\",\r\n    \"selected_hospital\": [\r\n        \"HO-1\",\r\n        \"HO-2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/doctors/doctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors",
+								"doctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Doctor",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"doctor_id\": 29,\r\n    \"doctor_custom_id\": \"DOC-29\",\r\n    \"doctor_name\": \"New test Doctor\",\r\n    \"phone_number\": 1234567890,\r\n    \"is_active\": true,\r\n    \"address\": \"test address\",\r\n    \"city\": \"Bhagalpur\",\r\n    \"state\": \"Bihar\",\r\n    \"zipcode\": 123456,\r\n    \"user_name\": \"test new doctor\",\r\n    \"email\": \"TestNewDoctor@mailinator.com\",\r\n    \"selected_hospital\": [\r\n        \"HO-1\",\r\n        \"HO-2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/doctors/doctor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors",
+								"doctor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "Get All Patient",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/patients/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Patient By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/patients/patient/PAT-25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"patient",
+								"PAT-25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							},
+							{
+								"key": "loggedRole",
+								"value": "Doctor"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patient_id\": \"\",\r\n    \"patient_custom_id\": \"\",\r\n    \"name\": \"Test new Patient\",\r\n    \"age\": 25,\r\n    \"blood_group\": \"B-\",\r\n    \"phone_number\": \"1234567890\",\r\n    \"is_active\": true,\r\n    \"address\": \"New address of patient\",\r\n    \"city\": \"Ahmedabad\",\r\n    \"state\": \"Gujarat\",\r\n    \"zipcode\": \"382445\",\r\n    \"user_name\": \"pateintnew\",\r\n    \"email\": \"newpatientofdhruv@mailinator.com\",\r\n    \"doctor_email\": \"dhruv@mailinator.com\",\r\n    \"selected_hospital\": [\r\n        \"HO-1\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/patient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Patient",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							},
+							{
+								"key": "loggedRole",
+								"value": "Doctor"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patient_id\": \"38\",\r\n    \"patient_custom_id\": \"PAT-38\",\r\n    \"name\": \"Test new Patientt\",\r\n    \"age\": 25,\r\n    \"blood_group\": \"B-\",\r\n    \"phone_number\": \"1234567890\",\r\n    \"is_active\": true,\r\n    \"address\": \"New address of patient\",\r\n    \"city\": \"Ahmedabad\",\r\n    \"state\": \"Gujarat\",\r\n    \"zipcode\": \"382445\",\r\n    \"user_name\": \"pateintnew\",\r\n    \"email\": \"newpatientofdhruv@mailinator.com\",\r\n    \"doctor_email\": \"dhruv@mailinator.com\",\r\n    \"selected_hospital\": [\r\n        \"HO-1\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/patient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Patient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/patients/patient/24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"patient",
+								"24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hospital",
+			"item": [
+				{
+					"name": "Get All Hospital",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/hospitals/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"all"
+							],
+							"query": [
+								{
+									"key": "loggedEmail",
+									"value": "admin@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hospital By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/hospitals/hospital/HO-2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"hospital",
+								"HO-2"
+							],
+							"query": [
+								{
+									"key": "loggedEmail",
+									"value": "admin@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hospital-Patient",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							},
+							{
+								"key": "loggedRole",
+								"value": "Admin"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/hospitals/getHospitalPatient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"getHospitalPatient"
+							],
+							"query": [
+								{
+									"key": "loggedEmail",
+									"value": "admin@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hospital-Doctor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							},
+							{
+								"key": "loggedRole",
+								"value": "Admin"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/hospitals/getHospitalDoctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"getHospitalDoctor"
+							],
+							"query": [
+								{
+									"key": "loggedEmail",
+									"value": "admin@gmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Hospital",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hospital_id\": \"\",\r\n    \"name\": \"New hospital\",\r\n    \"address\": \"isapur ahmedabad\",\r\n    \"city\": \"Ahmedabad\",\r\n    \"state\": \"Gujarat\",\r\n    \"zipcode\": \"123456\",\r\n    \"hospital_type\": \"GENERAL\",\r\n    \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/hospitals/hospital",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"hospital"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Hospital Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hospital_id\": 16,\r\n    \"name\": \"New hospital\",\r\n    \"address\": \"isanpur ahmedabad\",\r\n    \"city\": \"Ahmedabad\",\r\n    \"state\": \"Gujarat\",\r\n    \"zipcode\": 123456,\r\n    \"hospital_type\": \"GENERAL\",\r\n    \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/hospitals/hospital",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"hospital"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Hospital",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hospital_id\": 16,\r\n    \"name\": \"New hospital\",\r\n    \"address\": \"isanpur ahmedabad\",\r\n    \"city\": \"Ahmedabad\",\r\n    \"state\": \"Gujarat\",\r\n    \"zipcode\": 123456,\r\n    \"hospital_type\": \"GENERAL\",\r\n    \"is_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/hospitals/hospital/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hospitals",
+								"hospital",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Get All Appointment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/appointments/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"all"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Appointment By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/appointments/appointment/APT-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"appointment",
+								"APT-1"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Appointment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "abcdpatient@mailinator.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appointment_id\": \"\",\r\n    \"appointment_custom_id\": \"\",\r\n    \"appointment_title\": \"heavy leg pain\",\r\n    \"appointment_detail\": \"ytfifitfiytfiytfyit\",\r\n    \"appointment_date\": \"2024-05-29\",\r\n    \"appointment_time\": \"12 to 1 pm\",\r\n    \"user_email\": \"abcdpatient@mailinator.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/appointment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"appointment"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Appointment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "abcdpatient@mailinator.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appointment_id\": 10,\r\n    \"appointment_custom_id\": \"APT-10\",\r\n    \"appointment_title\": \"heavy pain\",\r\n    \"appointment_detail\": \"ytfifitfiytfiytfyit\",\r\n    \"appointment_date\": \"2024-05-29\",\r\n    \"appointment_time\": \"12 to 1 pm\",\r\n    \"user_email\": \"abcdpatient@mailinator.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/appointment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"appointment"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Approve Appointment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "abcdpatient@mailinator.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appointment_id\": \"16\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/appointment/approve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"appointment",
+								"approve"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Reject Appointment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "abcdpatient@mailinator.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appointment_id\": \"18\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/appointment/reject",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"appointment",
+								"reject"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/appointments/appointment/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"appointment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reset Password",
+			"item": [
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"dhruv@mailinator.com\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/resetPassword/verifyEmail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"resetPassword",
+								"verifyEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "dhruv@mailinator.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"otp\": \"764969\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/resetPassword/verifyOTP",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"resetPassword",
+								"verifyOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "dhruv@mailinator.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"new_password\": \"Dhruv@11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/resetPassword/setPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"resetPassword",
+								"setPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend OTP",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "dhruv@mailinator.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/resetPassword/resendOtp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"resetPassword",
+								"resendOtp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/users/getUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"getUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set User Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "loggedEmail",
+								"value": "admin@gmail.com"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"current_password\":\"Admin@12\",\"new_password\":\"Admin@11\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/setPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"setPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
